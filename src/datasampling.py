@@ -15,7 +15,6 @@ class dataSampling:
         self.shuffle = shuffle
 
         def data_train_test_split():
-
             self.X,self.y = self.df[list(set(self.df.columns).difference([self.y_column]))],self.df[self.y_column]
             if stratify == True:
                 self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X,self.y, test_size=self.test_size,shuffle=self.shuffle,stratify=self.y)
@@ -25,7 +24,7 @@ class dataSampling:
         data_train_test_split()
 
     
-    def get_data_wthout_sample(self):
+    def get_data_without_sample(self):
         return self.X_train, self.X_test, self.y_train, self.y_test
     
     def get_data_smote(self):
@@ -44,7 +43,6 @@ class dataSampling:
         return X_os,self.X_test,y_os,self.y_test
 
     def print_class_percentage(self,X_train,X_test,y_train,y_test):
-
         print("----Train class count------")
         y_tr_cnts = y_train.value_counts()
         print(y_tr_cnts)
