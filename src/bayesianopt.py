@@ -18,7 +18,7 @@ class bayesianOpt:
         # Initialize Classifier
         clf = self.classifier
 
-        # Extract Realted Params for Classifier
+        # Extract Related Params for Classifier
         validated_params = {}
         param_cls = clf.get_params().keys()
         for key in params:
@@ -31,7 +31,6 @@ class bayesianOpt:
         return clf.fit(X_train,y_train)   
     
     def optimize(self,X_train,y_train,param_grid,conf_dict):
-
         """
         Optimization Function for classifier with data inputs and scoring function
         """
