@@ -1,8 +1,6 @@
 from sklearn.metrics import classification_report,roc_auc_score
 
-
-
-def publish_model_socres(X,y,cv_fit,plotting=True):
+def publish_model_scores(X,y,cv_fit,plotting=True):
     y_pred=cv_fit.predict(X)
     y_pred_prob = cv_fit.predict_proba(X)
     print(classification_report(y,y_pred))
